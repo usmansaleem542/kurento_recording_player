@@ -63,16 +63,22 @@ class VideoPlayer {
         const myhtml = `
         <video id="video-${this.Id}" class="player__video viewer" autoplay></video>
         
-        <div class="player__controls">
+        <div class="player">
             <div id="progress-${this.Id}" class="progress">
                 <div id="progress-filled-${this.Id}" class="progress__filled"></div>
             </div>
             
-            <button id="toggle-play-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">play_circle_outline</i></button>
-            <input id="volume-${this.Id}" type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
-            <button id="skip-backward-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">skip_previous</i></button>
-            <button id="skip-forward-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">skip_next</i></button>
-            <button id="fullscreen-${this.Id}" class="player__button fullscreen" style="font-size:24px"><i class="material-icons">fullscreen</i></button>   
+            <div class="player__controls">
+                <div class="player__left_controls">
+                    <button id="skip-backward-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">skip_previous</i></button>
+                    <button id="toggle-play-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">play_circle_outline</i></button>
+                    <button id="skip-forward-${this.Id}" class="player__button" style="font-size:24px"><i class="material-icons">skip_next</i></button>
+                </div>
+                <div class="player__right_controls">
+                    <input id="volume-${this.Id}" type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+                    <button id="fullscreen-${this.Id}" class="player__button fullscreen" style="font-size:24px"><i class="material-icons">fullscreen</i></button>
+                </div> 
+            </div> 
         </div>
         `;
         const myfragment = document.createRange().createContextualFragment(myhtml);
